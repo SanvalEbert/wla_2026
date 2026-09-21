@@ -18,7 +18,7 @@
   </nav>
 </header>
 
-<aside class="story-rail" aria-hidden="true"><div class="story-line"><i id="storyFill"></i></div><div class="story-caption"><span id="storyChapter">01</span><b id="storyLabel">ABERTURA</b></div></aside><main id="deck">
+<aside class="story-rail" aria-hidden="true"><div class="story-line"><i id="storyFill"></i></div><div class="story-caption"><span id="storyChapter">01</span><b id="storyLabel">ABERTURA</b></div></aside><div class="narrative-thread" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path class="thread-base" d="M50 0 C50 12 26 16 26 28 S74 40 74 52 S28 65 28 77 S50 90 50 100"/><path class="thread-live" id="threadLive" d="M50 0 C50 12 26 16 26 28 S74 40 74 52 S28 65 28 77 S50 90 50 100"/></svg><span class="thread-pulse" id="threadPulse"></span></div><main id="deck">
 <section class="scene hero" id="abertura" data-label="Abertura">
  <div class="mesh"></div><div class="content hero-grid">
   <div><p class="eyebrow">WLA 2026 · Faculdade Santo Antônio · 22 SET 2026</p>
@@ -36,7 +36,7 @@
  <p class="lead">A tecnologia é parte da transformação. Pessoas, dados, processos e escolhas também.</p>
 </div></section>
 
-<section class="scene" id="transformacao"><div class="content">
+<section class="scene" id="transformacao" data-story="A interface muda" data-thread="01"><div class="content">
  <p class="kicker">Transformação</p><h2>Estamos no meio de uma mudança de interface.</h2>
  <div class="evolution-path" aria-label="Evolução tecnológica">
   <div class="evo-line"></div>
@@ -51,20 +51,20 @@
  <div class="transformation-thesis"><span>DA INTERFACE PARA O CONTEXTO</span><p>Não é apenas uma nova ferramenta. É uma nova forma de interagir com <strong>informação, software e trabalho.</strong></p></div><button class="media-btn case-launch" data-media="timeline"><span>CASO REAL · NVIDIA + FOXCONN</span><strong>Ver a transformação acontecendo</strong><i>→</i></button>
 </div></section>
 
-<section class="scene" id="mudanca"><div class="content">
+<section class="scene" id="mudanca" data-story="Do comando ao contexto" data-thread="02"><div class="story-handoff"><span>01</span><b>A interface muda</b><i>→</i><strong>o contexto ganha espaço</strong></div><div class="content">
  <p class="kicker">O que mudou?</p><h2>De executar comandos para trabalhar com <em>contexto</em>.</h2>
  <div class="compare"><article><small>ANTES</small><h3>Humano → Software → Resultado</h3><p>Interfaces, regras e fluxos previamente definidos.</p></article>
  <article class="accent-card"><small>AGORA</small><h3>Humano ↔ IA ↔ Ferramentas ↔ Dados</h3><p>Interação em linguagem natural, geração, análise e execução assistida.</p></article></div>
  <p class="question">Você ainda usa IA apenas para fazer perguntas?</p>
 </div></section>
 
-<section class="scene" id="dados"><div class="content">
+<section class="scene" id="dados" data-story="Contexto nasce dos dados" data-thread="03"><div class="story-handoff"><span>02</span><b>Contexto</b><i>→</i><strong>precisa de dados</strong></div><div class="content">
  <p class="kicker">Dados</p><h2>Tudo começa pelos dados.</h2>
  <div class="pipeline"><span>Dados</span><b>→</b><span>Contexto</span><b>→</b><span>Informação</span><b>→</b><span>Decisão</span><b>→</b><span>Ação</span></div>
  <div class="chips"><span>ADS · logs, código, usuários</span><span>Administração · clientes, processos</span><span>Contábeis · documentos, transações</span><span>RH · pessoas, competências</span><span>Logística · estoque, rotas, demanda</span><span>Pedagogia · aprendizagem, interação</span></div>
 </div></section>
 
-<section class="scene" id="profissoes"><div class="content">
+<section class="scene" id="profissoes" data-story="IA atravessa profissões" data-thread="04"><div class="story-handoff"><span>03</span><b>Dados + contexto</b><i>→</i><strong>mudam o trabalho</strong></div><div class="content">
  <p class="kicker">IA transversal</p><h2>Escolha uma área. Mude o contexto, preserve a lógica.</h2>
  <div class="tabs" role="tablist">
   <button class="tab active" data-area="tech">Tecnologia</button><button class="tab" data-area="adm">Administração</button><button class="tab" data-area="cont">Contábeis</button><button class="tab" data-area="rh">RH</button><button class="tab" data-area="log">Logística</button><button class="tab" data-area="edu">Educação</button>
@@ -72,29 +72,29 @@
  <div class="area-card" id="areaCard" aria-live="polite"></div><div class="case-actions"><button class="explore-btn" id="caseBtn">Explorar caso real ↗</button><button class="demo-btn" id="demoBtn">Executar demonstração ▶</button></div>
 </div></section>
 
-<section class="scene" id="processo"><div class="content">
+<section class="scene" id="processo" data-story="Da tarefa ao processo" data-thread="05"><div class="story-handoff"><span>04</span><b>Trabalho</b><i>→</i><strong>vira processo redesenhável</strong></div><div class="content">
  <p class="kicker">Da tarefa ao processo</p><h2>O que você faz repetidamente que poderia ser <em>apoiado ou automatizado?</em></h2>
  <div class="verbs"><span>Pesquisar</span><span>Organizar</span><span>Comparar</span><span>Resumir</span><span>Classificar</span><span>Produzir</span><span>Analisar</span><span>Monitorar</span><span>Automatizar</span></div>
  <p class="lead">A pergunta deixa de ser “qual prompt usar?” e passa a ser “como redesenhar este processo?”.</p>
 </div></section>
 
-<section class="scene statement" id="humano"><div class="content narrow">
+<section class="scene statement" id="humano" data-story="Automatizar para ampliar" data-thread="06"><div class="story-handoff"><span>05</span><b>Automação</b><i>→</i><strong>abre espaço para o humano</strong></div><div class="content narrow">
  <p class="kicker">Humano + IA</p><h2>Automatizar o <span class="muted">mecânico.</span><br>Ampliar o <em>humano.</em></h2>
  <div class="four"><span>CRIAR</span><span>ANALISAR</span><span>DECIDIR</span><span>INOVAR</span></div>
 </div></section>
 
-<section class="scene" id="experiencia"><div class="content">
+<section class="scene" id="experiencia" data-story="Redesenhar o trabalho" data-thread="07"><div class="content">
  <p class="kicker">Uma experiência</p><h2>Redesenhe uma atividade.</h2>
  <div class="flow"><article><small>01</small><strong>Atividade</strong><p>Identifique uma tarefa real.</p></article><i>→</i><article><small>02</small><strong>IA</strong><p>Organiza, extrai, gera ou analisa.</p></article><i>→</i><article><small>03</small><strong>Humano</strong><p>Valida contexto e consequências.</p></article><i>→</i><article><small>04</small><strong>Decisão</strong><p>Responsabilidade permanece explícita.</p></article></div>
 </div></section>
 
-<section class="scene" id="agentes"><div class="content">
+<section class="scene" id="agentes" data-story="Da resposta à ação" data-thread="08"><div class="story-handoff"><span>07</span><b>Processo assistido</b><i>→</i><strong>agentes podem agir</strong></div><div class="content">
  <p class="kicker">Além do prompt</p><h2>A interface continua evoluindo.</h2>
  <div class="steps"><span>Prompt</span><b>→</b><span>Assistente</span><b>→</b><span>Copiloto</span><b>→</b><span>Agente</span><b>→</b><span>Sistemas de agentes</span></div>
  <p class="lead">A IA deixa de apenas responder e passa a participar de etapas de um fluxo, usando dados e ferramentas sob regras definidas.</p><button class="media-btn case-launch" data-media="agents"><span>CASO REAL · AWS</span><strong>Do atendimento ao agente de IA</strong><i>→</i></button>
 </div></section>
 
-<section class="scene" id="papel"><div class="content">
+<section class="scene" id="papel" data-story="O humano permanece" data-thread="09"><div class="content">
  <p class="kicker">Seu papel</p><h2>Tecnologia muda. Responsabilidade profissional permanece.</h2>
  <div class="human-grid"><span>Contexto</span><span>Julgamento</span><span>Responsabilidade</span><span>Conhecimento da área</span><span class="center">VOCÊ</span><span>Criatividade</span><span>Comunicação</span><span>Pensamento crítico</span><span>Aprendizagem contínua</span></div>
 </div></section>
