@@ -1,8 +1,8 @@
 const scenes=[...document.querySelectorAll('.scene')], counter=document.querySelector('#counter'), dots=document.querySelector('#navdots'), progress=document.querySelector('#progress');
-scenes.forEach((s,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Ir para '+s.dataset.label||('seção '+(i+1)));b.onclick=()=>s.scrollIntoView();dots.appendChild(b)});
+scenes.forEach((s,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Ir para '+(s.dataset.label||('seção '+(i+1))));b.onclick=()=>s.scrollIntoView();dots.appendChild(b)});
 const dotButtons=[...dots.children];
 let current=0;
-const setCurrent=i=>{current=i;counter.textContent=String(i+1).padStart(2,'0')+' / '+String(scenes.length).padStart(2,'0');dotButtons.forEach((d,j)=>d.classList.toggle('active',j===i));progress.style.width=((i+1)/scenes.length*100)+'%'};
+const setCurrent=i=>{current=i;counter.textContent=String(i+1).padStart(2,'0')+' / '+String(scenes.length).padStart(2,'0');dotButtons.forEach((d,j)=>d.classList.toggle('active',j===i));progress.style.width=((i+1)/scenes.length*100)+'%';scenes.forEach((s,j)=>s.classList.toggle('is-current',j===i));const sf=document.querySelector('#storyFill'),sc=document.querySelector('#storyChapter'),sl=document.querySelector('#storyLabel');if(sf)sf.style.height=((i+1)/scenes.length*100)+'%';if(sc)sc.textContent=String(i+1).padStart(2,'0');if(sl)sl.textContent=(scenes[i].dataset.label||scenes[i].querySelector('.kicker')?.textContent||'CAPÍTULO').toUpperCase()};
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)setCurrent(scenes.indexOf(e.target))}),{threshold:.62});scenes.forEach(s=>io.observe(s));
 const go=d=>scenes[Math.max(0,Math.min(scenes.length-1,current+d))].scrollIntoView({behavior:'smooth'});
 document.querySelector('#next').onclick=()=>go(1);document.querySelector('#prev').onclick=()=>go(-1);
