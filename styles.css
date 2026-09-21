@@ -113,3 +113,27 @@
 #contato .signature{margin-top:24px}
 @media(min-width:1000px) and (max-height:800px){#contato .contact-lead{margin-bottom:18px}.profile-link{padding:14px}.profile-icon{width:46px;height:46px}.community-link{margin-top:10px;padding:13px 16px}#contato .signature{margin-top:16px}}
 @media(max-width:850px){.profile-links{grid-template-columns:1fr}.profile-link,.community-link{grid-template-columns:48px 1fr auto}.profile-icon{width:48px;height:48px}}
+
+/* WLA 2026 official event identity */
+.event-nav-link{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.event-lockup{display:grid;gap:4px;max-width:760px;color:var(--text);text-decoration:none;margin-bottom:18px}
+.event-lockup span{color:var(--cyan);font-size:.72rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+.event-lockup strong{font-size:clamp(.92rem,1.35vw,1.16rem);line-height:1.35;font-weight:680;color:#dce8f3}
+.event-lockup em{font-size:.82rem;line-height:1.35;color:var(--muted);font-style:normal}
+.event-lockup:hover strong,.event-lockup:focus-visible strong{color:var(--cyan)}
+#contato .event-footer-link{margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;color:var(--text);text-decoration:none;font-size:.75rem}
+#contato .event-footer-link b{color:var(--cyan);letter-spacing:.08em}
+#contato .event-footer-link span{color:#c8d5e1}
+#contato .event-footer-link em{color:var(--muted);font-style:normal}
+#contato .event-footer-link:hover span,#contato .event-footer-link:focus-visible span{color:var(--cyan)}
+@media(min-width:1000px) and (max-height:800px){
+ .event-lockup{margin-bottom:10px;gap:2px}
+ .event-lockup strong{font-size:.9rem}
+ .event-lockup em{font-size:.72rem}
+ #contato .event-footer-link{margin-top:10px;padding-top:10px;font-size:.68rem}
+}
+@media(max-width:760px){
+ .event-lockup{margin-bottom:14px}
+ #contato .event-footer-link{grid-template-columns:1fr;gap:4px}
+ .event-nav-link{display:none}
+}
