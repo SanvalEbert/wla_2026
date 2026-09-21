@@ -42,3 +42,49 @@
 @media(max-width:900px){.narrative-thread{display:none}.story-handoff{top:78px;max-width:80vw;overflow:hidden;text-overflow:ellipsis}.scene[data-thread]::after{display:none}}
 @media(max-height:720px) and (min-width:901px){.story-handoff{top:70px;font-size:.58rem;padding:5px 10px}}
 @media(prefers-reduced-motion:reduce){.thread-live,.story-handoff{transition:none!important}.thread-pulse{display:none}}
+
+/* Final journey — second visual refinement */
+#proximo .final-journey{max-width:1180px;text-align:left;padding-right:18px}
+#proximo .kicker{margin-bottom:12px}
+#proximo h2{max-width:1080px;margin:0 0 14px;font-size:clamp(3rem,5.2vw,5.35rem);line-height:.98}
+#proximo .final-lead{max-width:720px;margin:0 0 30px;font-size:clamp(1rem,1.5vw,1.25rem)}
+#proximo .journey-wrap{position:relative;margin-top:18px;padding-top:11px}
+#proximo .journey-line{position:absolute;z-index:0;left:8%;right:8%;top:70px;height:1px;background:linear-gradient(90deg,rgba(66,215,232,.12),rgba(66,215,232,.48) 50%,rgba(95,134,255,.18))}
+#proximo .journey-steps{position:relative;z-index:1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+#proximo .journey-step{appearance:none;-webkit-appearance:none;position:relative;min-width:0;min-height:126px;padding:24px 18px 18px;border:1px solid rgba(255,255,255,.11);border-radius:22px;background:linear-gradient(155deg,rgba(255,255,255,.035),rgba(255,255,255,.014));color:var(--text);font:inherit;text-align:left;cursor:pointer;overflow:hidden;transition:transform .28s ease,border-color .28s ease,background .28s ease,box-shadow .28s ease}
+#proximo .journey-step::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,rgba(66,215,232,.65),transparent);opacity:.2}
+#proximo .journey-step::after{content:"";position:absolute;top:61px;right:-9px;width:17px;height:17px;border-radius:50%;background:var(--bg);border:1px solid rgba(66,215,232,.34);box-shadow:0 0 0 5px var(--bg)}
+#proximo .journey-step:last-child::after{display:none}
+#proximo .journey-step small{display:block;margin-bottom:13px;color:var(--cyan);font-size:.67rem;font-weight:800;letter-spacing:.12em}
+#proximo .journey-step strong{display:block;font-size:clamp(1rem,1.25vw,1.2rem);line-height:1.2;margin-bottom:8px}
+#proximo .journey-step span{display:block;color:var(--muted);font-size:.79rem;line-height:1.35}
+#proximo .journey-step:hover,#proximo .journey-step:focus-visible,#proximo .journey-step.selected{transform:translateY(-5px);border-color:rgba(66,215,232,.55);background:linear-gradient(155deg,rgba(66,215,232,.075),rgba(95,134,255,.025));box-shadow:0 18px 42px rgba(0,0,0,.18)}
+#proximo .journey-step.selected::before{opacity:1}
+#proximo .journey-step.selected small,#proximo .journey-step.selected strong{color:var(--cyan)}
+#proximo .journey-step.selected span{color:#c1cfdd}
+
+/* Harmonize the previous self-positioning scene */
+#historia .content{max-width:1180px}
+#historia .levels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin-top:20px}
+#historia .levels button{min-width:0;min-height:86px;padding:16px 12px;border-radius:20px;display:grid;place-items:center;font-size:clamp(.9rem,1.25vw,1.08rem);font-weight:700}
+#historia .lead{max-width:720px;margin-top:22px}
+#historia h2{max-width:1080px}
+
+@media(min-width:1000px) and (max-height:800px){
+ #proximo h2{font-size:clamp(3rem,4.7vw,4.5rem);margin-bottom:10px}
+ #proximo .final-lead{margin-bottom:20px}
+ #proximo .journey-wrap{margin-top:8px}
+ #proximo .journey-step{min-height:110px;padding:19px 16px 15px}
+ #proximo .journey-line{top:61px}
+ #proximo .journey-step::after{top:52px}
+}
+@media(max-width:950px){
+ #proximo .journey-steps,#historia .levels{grid-template-columns:repeat(3,minmax(0,1fr))}
+ #proximo .journey-line,#proximo .journey-step::after{display:none}
+}
+@media(max-width:620px){
+ #proximo .final-journey{padding-right:0}
+ #proximo h2{font-size:clamp(2.4rem,11vw,3.5rem)}
+ #proximo .journey-steps,#historia .levels{grid-template-columns:1fr}
+ #proximo .journey-step{min-height:auto}
+}
