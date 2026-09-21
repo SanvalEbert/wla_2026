@@ -1,0 +1,16 @@
+const scenes=[...document.querySelectorAll('.scene')], counter=document.querySelector('#counter'), dots=document.querySelector('#navdots'), progress=document.querySelector('#progress');
+scenes.forEach((s,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Ir para '+s.dataset.label||('seção '+(i+1)));b.onclick=()=>s.scrollIntoView();dots.appendChild(b)});
+const dotButtons=[...dots.children];
+let current=0;
+const setCurrent=i=>{current=i;counter.textContent=String(i+1).padStart(2,'0')+' / '+String(scenes.length).padStart(2,'0');dotButtons.forEach((d,j)=>d.classList.toggle('active',j===i));progress.style.width=((i+1)/scenes.length*100)+'%'};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)setCurrent(scenes.indexOf(e.target))}),{threshold:.62});scenes.forEach(s=>io.observe(s));
+const go=d=>scenes[Math.max(0,Math.min(scenes.length-1,current+d))].scrollIntoView({behavior:'smooth'});
+document.querySelector('#next').onclick=()=>go(1);document.querySelector('#prev').onclick=()=>go(-1);
+document.addEventListener('keydown',e=>{if(['ArrowDown','ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(1)}if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(-1)}if(e.key==='Home')scenes[0].scrollIntoView();if(e.key==='End')scenes.at(-1).scrollIntoView()});
+const dlg=document.querySelector('#speakerDialog');document.querySelector('#speakerBtn').onclick=()=>dlg.showModal();document.querySelector('#closeSpeaker').onclick=()=>dlg.close();dlg.onclick=e=>{if(e.target===dlg)dlg.close()};
+document.querySelector('#presentBtn').onclick=()=>document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();
+const areas={tech:['Tecnologia','Código, incidentes e documentação','IA organiza contexto → sugere caminhos → profissional valida e implementa'],adm:['Administração','Relatórios, processos e cenários','IA consolida dados → identifica padrões → profissional interpreta e decide'],cont:['Ciências Contábeis','Documentos, conciliações e análises','IA extrai e classifica → sinaliza diferenças → profissional valida e responde'],rh:['Recursos Humanos','Currículos, competências e rotinas','IA organiza informações → apoia triagem → profissional contextualiza e decide'],log:['Logística','Estoque, demanda e rotas','IA cruza sinais → apoia cenários → profissional define restrições e decisão'],edu:['Educação','Aprendizagem, feedback e acompanhamento','IA organiza evidências → apoia personalização → educador interpreta e intervém']};
+const card=document.querySelector('#areaCard');function render(k){const a=areas[k];card.innerHTML='<h3>'+a[0]+'</h3><p class="lead">'+a[1]+'</p><p class="mini-flow">'+a[2]+'</p>'}render('tech');
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));t.classList.add('active');render(t.dataset.area)});
+document.querySelectorAll('.levels button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.levels button').forEach(x=>x.classList.remove('selected'));b.classList.add('selected')});
+setCurrent(0);
