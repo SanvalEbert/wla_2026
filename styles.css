@@ -88,3 +88,28 @@
  #proximo .journey-steps,#historia .levels{grid-template-columns:1fr}
  #proximo .journey-step{min-height:auto}
 }
+
+/* Contact profiles — direct links, no Linktree */
+#contato .content{max-width:1120px}
+#contato h2{max-width:950px;margin-bottom:14px}
+#contato .contact-lead{margin:0 0 28px;max-width:820px}
+.profile-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.profile-link,.community-link{position:relative;display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:14px;min-width:0;padding:18px;border:1px solid rgba(255,255,255,.11);border-radius:20px;background:linear-gradient(155deg,rgba(255,255,255,.035),rgba(255,255,255,.014));color:var(--text);text-decoration:none;transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.profile-link:hover,.profile-link:focus-visible{transform:translateY(-4px);border-color:rgba(66,215,232,.5);background:linear-gradient(155deg,rgba(66,215,232,.06),rgba(95,134,255,.02))}
+.profile-icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);font-weight:850;font-size:1.25rem}
+.profile-icon svg{width:27px;height:27px;fill:currentColor}
+.profile-link.linkedin .profile-icon{color:#7bbcff}
+.profile-link.researchgate .profile-icon{color:#55e6d1}
+.profile-link.lattes .profile-icon{color:var(--cyan)}
+.rg-mark{font-family:Arial,sans-serif;letter-spacing:-.08em}.rg-mark sup{font-size:.45em;vertical-align:super;margin-left:1px}
+.profile-link>span:nth-child(2),.community-copy{min-width:0;display:grid;gap:3px}
+.profile-link small,.community-link small{color:var(--cyan);font-size:.61rem;font-weight:800;letter-spacing:.11em}
+.profile-link strong,.community-link strong{font-size:1.05rem}
+.profile-link em,.community-link em{font-size:.72rem;color:var(--muted);font-style:normal;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.profile-link>i,.community-link>i{font-style:normal;color:var(--cyan);font-size:1.2rem}
+.community-link{margin-top:14px;grid-template-columns:52px 1fr auto;padding:17px 20px}
+.community-link .whatsapp-icon{color:#72e39f}
+.community-link.pending{opacity:.68;cursor:default}
+#contato .signature{margin-top:24px}
+@media(min-width:1000px) and (max-height:800px){#contato .contact-lead{margin-bottom:18px}.profile-link{padding:14px}.profile-icon{width:46px;height:46px}.community-link{margin-top:10px;padding:13px 16px}#contato .signature{margin-top:16px}}
+@media(max-width:850px){.profile-links{grid-template-columns:1fr}.profile-link,.community-link{grid-template-columns:48px 1fr auto}.profile-icon{width:48px;height:48px}}
