@@ -14,3 +14,4 @@ const card=document.querySelector('#areaCard');function render(k){const a=areas[
 document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));t.classList.add('active');render(t.dataset.area)});
 document.querySelectorAll('.levels button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.levels button').forEach(x=>x.classList.remove('selected'));b.classList.add('selected')});
 setCurrent(0);
+document.querySelector('#toTop').onclick=()=>scenes[0].scrollIntoView({behavior:'smooth'});document.querySelector('#toBottom').onclick=()=>scenes.at(-1).scrollIntoView({behavior:'smooth'});
