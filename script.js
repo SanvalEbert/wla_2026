@@ -52,3 +52,8 @@ const demoDlg=document.querySelector('#demoDialog'),demoSteps=[...document.query
 function resetDemo(){clearInterval(demoTimer);demoTimer=null;demoIndex=0;demoSteps.forEach(x=>x.classList.remove('active'));demoStatus.textContent='Pronto para iniciar.'}
 function runDemo(){resetDemo();demoSteps[0].classList.add('active');demoStatus.textContent='Solicitação recebida.';demoIndex=1;demoTimer=setInterval(()=>{if(demoIndex>=demoSteps.length){clearInterval(demoTimer);demoTimer=null;demoStatus.textContent='Fluxo concluído com validação humana.';return}demoSteps[demoIndex].classList.add('active');demoStatus.textContent=['','IA interpretando a intenção.','Consultando dados autorizados.','Preparando proposta.','Aguardando validação humana.','Resultado liberado.'][demoIndex];demoIndex++},850)}
 document.querySelector('#demoBtn').onclick=()=>{resetDemo();demoDlg.showModal()};document.querySelector('#runDemo').onclick=runDemo;document.querySelector('#resetDemo').onclick=resetDemo;document.querySelector('#closeDemo').onclick=()=>{resetDemo();demoDlg.close()};demoDlg.onclick=e=>{if(e.target===demoDlg){resetDemo();demoDlg.close()}};
+
+document.querySelectorAll('#proximo .journey-step').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('#proximo .journey-step').forEach(x=>x.classList.remove('selected'));
+ b.classList.add('selected');
+});
