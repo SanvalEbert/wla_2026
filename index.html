@@ -62,7 +62,7 @@
  <div class="tabs" role="tablist">
   <button class="tab active" data-area="tech">Tecnologia</button><button class="tab" data-area="adm">Administração</button><button class="tab" data-area="cont">Contábeis</button><button class="tab" data-area="rh">RH</button><button class="tab" data-area="log">Logística</button><button class="tab" data-area="edu">Educação</button>
  </div>
- <div class="area-card" id="areaCard" aria-live="polite"></div>
+ <div class="area-card" id="areaCard" aria-live="polite"></div><button class="explore-btn" id="caseBtn">Explorar caso ↗</button>
 </div></section>
 
 <section class="scene" id="processo"><div class="content">
@@ -110,6 +110,18 @@
  <p class="lead">Reconhecer o ponto de partida ajuda a definir o próximo movimento.</p>
 </div></section>
 
+<section class="scene" id="ecossistema"><div class="content">
+<p class="kicker">Continue aprendendo</p><h2>Ecossistemas de aprendizagem e prática.</h2>
+<p class="lead">Programas oficiais para desenvolver competências em nuvem, IA, redes, cibersegurança, dados e computação acelerada.</p>
+<div class="academy-grid">
+<a href="https://aws.amazon.com/pt/training/awsacademy/" target="_blank" rel="noopener"><b>AWS</b><strong>AWS Academy</strong><span>Cloud · IA/ML · GenAI · laboratórios</span><small>Acessar programa ↗</small></a>
+<a href="https://www.netacad.com/" target="_blank" rel="noopener"><b>CISCO</b><strong>Networking Academy</strong><span>Redes · cibersegurança · IA e dados</span><small>Acessar programa ↗</small></a>
+<a href="https://edu.google.com/intl/ALL_br/ai/education/" target="_blank" rel="noopener"><b>GOOGLE</b><strong>Google for Education</strong><span>IA · Gemini · formação para educação</span><small>Acessar programa ↗</small></a>
+<a href="https://www.fortinet.com/br/training/academic-partner-program" target="_blank" rel="noopener"><b>FORTINET</b><strong>Academic Partner Program</strong><span>Cibersegurança · NSE · prática</span><small>Acessar programa ↗</small></a>
+<a href="https://www.nvidia.com/pt-br/training/" target="_blank" rel="noopener"><b>NVIDIA</b><strong>Deep Learning Institute</strong><span>IA · GenAI/LLMs · dados · computação acelerada</span><small>Acessar programa ↗</small></a>
+</div><p class="academy-note">Explore durante ou depois da palestra. Os links abrem em uma nova guia.</p>
+</div></section>
+
 <section class="scene statement" id="proximo"><div class="content narrow">
  <p class="kicker">A provocação final</p><h2>Qual será o seu <em>próximo passo?</em></h2>
  <div class="nextline"><span>Conhecer</span><b>→</b><span>Experimentar</span><b>→</b><span>Aprender</span><b>→</b><span>Criar</span><b>→</b><span>Transformar</span></div>
@@ -127,6 +139,7 @@
 <div class="vertical-controls" aria-label="Navegação vertical"><button id="toTop" aria-label="Voltar ao início" title="Voltar ao início">↑</button><button id="toBottom" aria-label="Ir ao final" title="Ir ao final">↓</button></div>
 <div class="controls"><button id="prev" aria-label="Seção anterior">←</button><span id="counter" aria-live="polite">01 / 16</span><button id="next" aria-label="Próxima seção">→</button></div>
 
+<dialog id="caseDialog" class="case-dialog"><button class="close" id="closeCase" aria-label="Fechar">×</button><div id="caseContent"></div></dialog>
 <dialog id="speakerDialog"><button class="close" id="closeSpeaker" aria-label="Fechar">×</button>
  <div class="bio"><img src="https://avatars.githubusercontent.com/u/115511942?v=4" alt="Foto de Sanval Ebert">
  <div><p class="kicker">Sobre o palestrante</p><h2>Sanval Ebert</h2><p class="lead">Professor, pesquisador e coordenador acadêmico na Universidade SENAI CIMATEC.</p>
