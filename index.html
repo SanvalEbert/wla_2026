@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip-link" href="#deck">Ir para o conteúdo</a>
 <div class="progress" id="progress"></div>
 <header class="topbar">
   <a class="brand" href="#abertura" aria-label="Início"><span>WLA</span><b>2026</b></a>
@@ -123,7 +124,8 @@
 </main>
 
 <div class="navdots" id="navdots" aria-label="Progresso da apresentação"></div>
-<div class="controls"><button id="prev" aria-label="Anterior">←</button><span id="counter">01 / 14</span><button id="next" aria-label="Próximo">→</button></div>
+<div class="vertical-controls" aria-label="Navegação vertical"><button id="toTop" aria-label="Voltar ao início" title="Voltar ao início">↑</button><button id="toBottom" aria-label="Ir ao final" title="Ir ao final">↓</button></div>
+<div class="controls"><button id="prev" aria-label="Seção anterior">←</button><span id="counter" aria-live="polite">01 / 16</span><button id="next" aria-label="Próxima seção">→</button></div>
 
 <dialog id="speakerDialog"><button class="close" id="closeSpeaker" aria-label="Fechar">×</button>
  <div class="bio"><img src="https://avatars.githubusercontent.com/u/115511942?v=4" alt="Foto de Sanval Ebert">
@@ -135,5 +137,8 @@
  <p class="bio-note">Pesquisa de doutorado desenvolvida no contexto de IA em ambientes virtuais de ensino e aprendizagem, com a plataforma InteliEduca.</p>
  </div></div>
 </dialog>
+<div vw class="enabled" aria-label="Acessibilidade em Libras"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>window.addEventListener('load',function(){if(window.VLibras){new window.VLibras.Widget('https://vlibras.gov.br/app');}});</script>
 <script src="script.js"></script>
 </body></html>
