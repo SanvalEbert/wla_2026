@@ -18,7 +18,7 @@
   </nav>
 </header>
 
-<main id="deck">
+<aside class="story-rail" aria-hidden="true"><div class="story-line"><i id="storyFill"></i></div><div class="story-caption"><span id="storyChapter">01</span><b id="storyLabel">ABERTURA</b></div></aside><main id="deck">
 <section class="scene hero" id="abertura" data-label="Abertura">
  <div class="mesh"></div><div class="content hero-grid">
   <div><p class="eyebrow">WLA 2026 · Faculdade Santo Antônio · 22 SET 2026</p>
@@ -38,10 +38,17 @@
 
 <section class="scene" id="transformacao"><div class="content">
  <p class="kicker">Transformação</p><h2>Estamos no meio de uma mudança de interface.</h2>
- <div class="timeline" aria-label="Evolução tecnológica">
-  <span>Internet</span><b>→</b><span>Mobile</span><b>→</b><span>Cloud</span><b>→</b><span>Dados</span><b>→</b><span>IA</span><b>→</b><span>IA Generativa</span><b>→</b><span>Agentes</span>
+ <div class="evolution-path" aria-label="Evolução tecnológica">
+  <div class="evo-line"></div>
+  <div class="evo-node"><small>01</small><strong>Internet</strong><span>conectar</span></div>
+  <div class="evo-node"><small>02</small><strong>Mobile</strong><span>acessar</span></div>
+  <div class="evo-node"><small>03</small><strong>Cloud</strong><span>escalar</span></div>
+  <div class="evo-node"><small>04</small><strong>Dados</strong><span>compreender</span></div>
+  <div class="evo-node current"><small>05</small><strong>IA</strong><span>interpretar</span></div>
+  <div class="evo-node current"><small>06</small><strong>IA Generativa</strong><span>criar</span></div>
+  <div class="evo-node future"><small>07</small><strong>Agentes</strong><span>agir</span></div>
  </div>
- <p class="lead">Não é apenas uma nova ferramenta. É uma nova forma de interagir com informação, software e trabalho.</p><button class="media-btn case-launch" data-media="timeline"><span>CASO REAL · NVIDIA + FOXCONN</span><strong>Ver a transformação acontecendo</strong><i>→</i></button>
+ <div class="transformation-thesis"><span>DA INTERFACE PARA O CONTEXTO</span><p>Não é apenas uma nova ferramenta. É uma nova forma de interagir com <strong>informação, software e trabalho.</strong></p></div><button class="media-btn case-launch" data-media="timeline"><span>CASO REAL · NVIDIA + FOXCONN</span><strong>Ver a transformação acontecendo</strong><i>→</i></button>
 </div></section>
 
 <section class="scene" id="mudanca"><div class="content">
