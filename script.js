@@ -53,7 +53,31 @@ function resetDemo(){clearInterval(demoTimer);demoTimer=null;demoIndex=0;demoSte
 function runDemo(){resetDemo();demoSteps[0].classList.add('active');demoStatus.textContent='Solicitação recebida.';demoIndex=1;demoTimer=setInterval(()=>{if(demoIndex>=demoSteps.length){clearInterval(demoTimer);demoTimer=null;demoStatus.textContent='Fluxo concluído com validação humana.';return}demoSteps[demoIndex].classList.add('active');demoStatus.textContent=['','IA interpretando a intenção.','Consultando dados autorizados.','Preparando proposta.','Aguardando validação humana.','Resultado liberado.'][demoIndex];demoIndex++},850)}
 document.querySelector('#demoBtn').onclick=()=>{resetDemo();demoDlg.showModal()};document.querySelector('#runDemo').onclick=runDemo;document.querySelector('#resetDemo').onclick=resetDemo;document.querySelector('#closeDemo').onclick=()=>{resetDemo();demoDlg.close()};demoDlg.onclick=e=>{if(e.target===demoDlg){resetDemo();demoDlg.close()}};
 
-document.querySelectorAll('#proximo .journey-step').forEach(b=>b.onclick=()=>{
+const journeyResponses=[
+ {title:'Conhecer é o começo.',text:'Estude os fundamentos e construa repertório para desenvolver novas competências.'},
+ {title:'Experimentar transforma curiosidade em prática.',text:'Teste, compare e aprenda com pequenos desafios enquanto amplia suas competências.'},
+ {title:'Aprender mantém o movimento.',text:'Aprofunde o conhecimento e transforme experiência em competência.'},
+ {title:'Criar é aplicar o que você aprendeu.',text:'Construa soluções, valide ideias e continue estudando para ampliar sua autonomia.'},
+ {title:'Transformar exige aprendizagem contínua.',text:'Conecte conhecimento, prática e propósito para sustentar novas competências.'}
+];
+const journeyMessage=document.querySelector('#journeyMessage'),journeyMessageTitle=document.querySelector('#journeyMessageTitle'),journeyMessageText=document.querySelector('#journeyMessageText');
+document.querySelectorAll('#proximo .journey-step').forEach((b,i)=>b.onclick=()=>{
  document.querySelectorAll('#proximo .journey-step').forEach(x=>x.classList.remove('selected'));
  b.classList.add('selected');
+ const msg=journeyResponses[i];
+ journeyMessageTitle.textContent=msg.title;
+ journeyMessageText.textContent=msg.text;
+ journeyMessage.classList.remove('visible');
+ requestAnimationFrame(()=>journeyMessage.classList.add('visible'));
+});
+
+/* Brief glow on touch devices for the visual vocabulary used throughout the deck */
+const glowTargets=document.querySelectorAll('.evo-node,.compare article,.pipeline span,.chips span,.tabs .tab,.area-card,.verbs span,.four span,.flow article,.steps span,.human-grid span,.risk-cloud span,#historia .levels button,.academy-grid a,.story-card,#proximo .journey-step');
+glowTargets.forEach(el=>{
+ el.addEventListener('pointerdown',e=>{
+  if(e.pointerType==='mouse')return;
+  el.classList.add('touch-glow');
+  clearTimeout(el._glowTimer);
+  el._glowTimer=setTimeout(()=>el.classList.remove('touch-glow'),650);
+ });
 });
